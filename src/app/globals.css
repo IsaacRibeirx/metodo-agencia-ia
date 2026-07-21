@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+:root {
+  --navy-950: #040b18;
+  --navy-900: #07152a;
+  --navy-800: #0a1c38;
+  --blue-600: #335ac9;
+  --blue-500: #2478f2;
+  --cyan-400: #53b8f0;
+  --purple-600: #743eb3;
+  --purple-500: #8b43d4;
+  --indigo-600: #262f93;
+  --white: #ffffff;
+  --gray-100: #f3f5f9;
+  --gray-300: #c9d1df;
+  --gray-500: #7f8ba3;
+  --gray-900: #101827;
+  --background: var(--navy-950);
+  --foreground: var(--white);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-navy-950: var(--navy-950);
+  --color-navy-900: var(--navy-900);
+  --color-navy-800: var(--navy-800);
+  --color-blue-600: var(--blue-600);
+  --color-blue-500: var(--blue-500);
+  --color-cyan-400: var(--cyan-400);
+  --color-purple-600: var(--purple-600);
+  --color-purple-500: var(--purple-500);
+  --color-gray-100: var(--gray-100);
+  --color-gray-300: var(--gray-300);
+  --color-gray-500: var(--gray-500);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-space-grotesk), var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+button,
+a,
+input,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: rgba(83, 184, 240, 0.32);
+  color: white;
+}
+
+.hero-bg {
+  background:
+    radial-gradient(circle at top left, rgba(36, 120, 242, 0.22), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(116, 62, 179, 0.22), transparent 40%),
+    #040b18;
+}
+
+.section-wrap {
+  position: relative;
+  padding-block: clamp(4.5rem, 8vw, 7rem);
+}
+
+.eyebrow {
+  margin-bottom: 0.9rem;
+  color: #8fe1ff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #53b8f0 0%, #8b43d4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.circuit-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.32;
+  background-image:
+    linear-gradient(rgba(83, 184, 240, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(83, 184, 240, 0.08) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(to bottom, black, transparent 82%);
+}
+
+.ebook-cover::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  z-index: 1;
+  width: 12%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.22), transparent);
+  mix-blend-mode: screen;
+}
+
+.ebook-mockup {
+  perspective: 1200px;
+}
+
+.floating-card {
+  animation: float-soft 5s ease-in-out infinite;
+}
+
+.floating-card:nth-of-type(2n) {
+  animation-delay: 0.8s;
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
