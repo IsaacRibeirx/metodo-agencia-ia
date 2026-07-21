@@ -1,0 +1,16 @@
+{
+  "name": "Método Agência IA",
+  "short_name": "Agência IA",
+  "description": "Página oficial do Método Agência IA por Isaac Ribeiro e IRSync.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#040B18",
+  "theme_color": "#2478F2",
+  "icons": [
+    {
+      "src": "/assets/author/isaac-ribeiro.jpg",
+      "sizes": "958x939",
+      "type": "image/jpeg"
+    }
+  ]
+}
